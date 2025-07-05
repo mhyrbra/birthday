@@ -1,24 +1,6 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { birthday, calculateTimeLeft } from '../utility/calculateBirthday';
 
-const AnimatedCounter = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const updatedTime = calculateTimeLeft(birthday);
-      setTimeLeft(updatedTime);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
+const AnimatedCounter = ({ timeLeft }) => {
   const renderTimeUnit = (value, label) => (
     <div className='flex flex-col items-center gap-2 w-12'>
       <motion.span

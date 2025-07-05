@@ -2,7 +2,6 @@ export const birthday = new Date('2025-08-15T00:00:00');
 
 export const calculateTimeLeft = (targetDate) => {
   const difference = targetDate.getTime() - new Date().getTime();
-
   if (difference <= 0) return null;
 
   const days = Math.floor(difference / (1000 * 60 * 60 * 24));
