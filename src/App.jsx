@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <div
-      className='h-screen flex justify-center items-center flex-col gap-6 bg-blue-200'
+      className='h-screen flex justify-center items-center flex-col gap-6 bg-green-200'
       id='background'
     >
       {timeLeft && (
@@ -40,30 +40,38 @@ const App = () => {
           <h1 className='font-bold text-xl text-center'>
             <Typewriter
               words={[
-                'تولدت پیش پیش مبارک وروجک 😍❤',
-                'به امید اون روزی که مهندس کوچولو صدات بزنم 😎',
+                '💚تولدت پیش پیش مبارک شرککککک ',
+                'به امید دیدن کاسپلی‌هات در سطح جهانی😎',
               ]}
               cursor
               cursorStyle='|'
               typeSpeed={70}
               deleteSpeed={50}
-              delaySpeed={1500}
+              delaySpeed={800}
             />
           </h1>
           <AnimatedCounter timeLeft={timeLeft} />
+          <iframe
+            className='size-60 pointer-events-none'
+            src='https://giphy.com/embed/Jb56O0QSZRopG'
+            width='240'
+            height='240'
+            frameBorder='0'
+            allowFullScreen
+          ></iframe>
         </>
       )}
       {!timeLeft && (
         <>
           <h1 className='font-bold text-xl text-center'>
-            😍ببین تولد کیهههههههههه دختر کوچولوی من
+            😍🍰ببین تولد کدوم دختر کوچولوئه
           </h1>
           <iframe
             src='https://giphy.com/embed/PqLcW0s1xWz0ySP6Ed'
             width='480'
             height='480'
             frameBorder='0'
-            className='giphy-embed size-40 rounded-4xl'
+            className='giphy-embed size-52 rounded-4xl pointer-events-none'
             allowFullScreen
           ></iframe>
         </>
