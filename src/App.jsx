@@ -14,9 +14,13 @@ const App = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const updatedTime = calculateTimeLeft(birthday);
-      setTimeLeft(updatedTime);
+      if (updatedTime === null) {
+        clearInterval(interval);
+        setTimeLeft(null);
+      } else {
+        setTimeLeft(updatedTime);
+      }
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
