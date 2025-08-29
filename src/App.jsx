@@ -1,6 +1,6 @@
-import AnimatedCounter from './components/AnimatedCounter';
+import { useEffect, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
-import { useState, useEffect } from 'react';
+import AnimatedCounter from './components/AnimatedCounter';
 import { birthday, calculateTimeLeft } from './utility/calculateBirthday';
 import { getRandomColor } from './utility/discoBackground';
 
@@ -35,51 +35,38 @@ const App = () => {
   }, [timeLeft]);
 
   return (
-    <div
-      className='h-screen flex justify-center items-center flex-col gap-6 bg-green-200'
-      id='background'
-    >
-      {timeLeft && (
-        <>
-          <h1 className='font-bold text-xl text-center'>
-            <Typewriter
-              words={[
-                '💚تولدت پیش پیش مبارک شرککککک ',
-                'به امید دیدن کاسپلی‌هات در سطح جهانی😎',
-              ]}
-              cursor
-              cursorStyle='|'
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={800}
-            />
-          </h1>
-          <AnimatedCounter timeLeft={timeLeft} />
-          <iframe
-            className='size-60 pointer-events-none'
-            src='https://giphy.com/embed/Jb56O0QSZRopG'
-            width='240'
-            height='240'
-            frameBorder='0'
-            allowFullScreen
-          ></iframe>
-        </>
-      )}
-      {!timeLeft && (
-        <>
-          <h1 className='font-bold text-xl text-center'>
-            😍🍰ببین تولد کدوم دختر کوچولوئه
-          </h1>
-          <iframe
-            src='https://giphy.com/embed/PqLcW0s1xWz0ySP6Ed'
-            width='480'
-            height='480'
-            frameBorder='0'
-            className='giphy-embed size-52 rounded-4xl pointer-events-none'
-            allowFullScreen
-          ></iframe>
-        </>
-      )}
+    <div className='bg-black'>
+      <div
+        className={`h-screen flex justify-center items-center flex-col gap-6 ${
+          timeLeft !== null
+            ? "bg-[url('/dark-wallpaper.jpg')] bg-cover bg-no-repeat bg-center"
+            : 'bg-transparent'
+        } `}
+        id='background'
+      >
+        {timeLeft && (
+          <>
+            <h1 className='font-bold text-lg text-center text-white'>
+              <Typewriter
+                words={['میو میو🐱', 'تولدت پیش پیش مبارک دختر کوچولوی من']}
+                cursor
+                cursorStyle='|'
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={800}
+              />
+            </h1>
+            <AnimatedCounter timeLeft={timeLeft} />
+          </>
+        )}
+        {!timeLeft && (
+          <>
+            <h1 className='font-bold text-xl text-center text-white'>
+              😍🍰ببین تولد کدوم دختر کوچولوئه
+            </h1>
+          </>
+        )}
+      </div>
     </div>
   );
 };

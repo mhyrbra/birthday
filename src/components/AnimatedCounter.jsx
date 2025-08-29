@@ -12,12 +12,12 @@ const AnimatedCounter = ({ timeLeft }) => {
       >
         {value.toString().padStart(2, '0')}
       </motion.span>
-      <span className='text-sm text-gray-500'>{label}</span>
+      <span className='text-sm text-white'>{label}</span>
     </div>
   );
 
   return (
-    <div className='flex flex-row gap-4'>
+    <div className='flex flex-row gap-4 text-white'>
       {renderTimeUnit(timeLeft.days, 'D')}
       {renderTimeUnit(timeLeft.hours, 'H')}
       {renderTimeUnit(timeLeft.minutes, 'M')}

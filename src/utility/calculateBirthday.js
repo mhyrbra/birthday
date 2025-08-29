@@ -1,4 +1,4 @@
-export const birthday = new Date('2025-08-22T00:00:00');
+export const birthday = new Date('2025-11-21T00:00:00');
 
 export const calculateTimeLeft = (targetDate) => {
   const difference = targetDate.getTime() - new Date().getTime();
